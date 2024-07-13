@@ -39,25 +39,25 @@ const AddProductModal = ({ open, handleClose, product, productTypes }) => {
       setWarrantyYears(product.warranty_years);
       setAvailable(product.available);
     } else {
-      setName('');
-      setType('');
-      setPrice('');
-      setRating('');
-      setWarrantyYears('');
+      setName("");
+      setType("");
+      setPrice("");
+      setRating("");
+      setWarrantyYears("");
       setAvailable(true);
     }
   }, [product]);
 
   const validateFields = () => {
     const newErrors = {
-      name: name === '',
-      type: type === '',
-      price: price === '',
-      rating: rating === '' || rating > 5,
-      warrantyYears: warrantyYears === '',
+      name: name === "",
+      type: type === "",
+      price: price === "",
+      rating: rating === "" || rating > 5,
+      warrantyYears: warrantyYears === "",
     };
     setErrors(newErrors);
-    return !Object.values(newErrors).some(error => error);
+    return !Object.values(newErrors).some((error) => error);
   };
 
   const handleSubmit = () => {
@@ -82,11 +82,11 @@ const AddProductModal = ({ open, handleClose, product, productTypes }) => {
     } else {
       dispatch(addProduct(newProduct));
     }
-    setName('');
-    setType('');
-    setPrice('');
-    setRating('');
-    setWarrantyYears('');
+    setName("");
+    setType("");
+    setPrice("");
+    setRating("");
+    setWarrantyYears("");
     setAvailable(true);
 
     handleClose();
@@ -113,7 +113,7 @@ const AddProductModal = ({ open, handleClose, product, productTypes }) => {
           value={type}
           onChange={(event, newValue) => {
             setType(newValue);
-            setErrors({ ...errors, type: newValue === '' });
+            setErrors({ ...errors, type: newValue === "" });
           }}
           renderInput={(params) => (
             <TextField
@@ -124,7 +124,7 @@ const AddProductModal = ({ open, handleClose, product, productTypes }) => {
               value={type}
               onChange={(e) => {
                 setType(e.target.value);
-                setErrors({ ...errors, type: e.target.value === '' });
+                setErrors({ ...errors, type: e.target.value === "" });
               }}
               error={errors.type}
               helperText={errors.type ? "Type is required" : ""}
@@ -138,7 +138,7 @@ const AddProductModal = ({ open, handleClose, product, productTypes }) => {
           value={price}
           onChange={(e) => {
             setPrice(e.target.value);
-            setErrors({ ...errors, price: e.target.value === '' });
+            setErrors({ ...errors, price: e.target.value === "" });
           }}
           error={errors.price}
           helperText={errors.price ? "Price is required" : ""}
@@ -150,10 +150,15 @@ const AddProductModal = ({ open, handleClose, product, productTypes }) => {
           value={rating}
           onChange={(e) => {
             setRating(e.target.value);
-            setErrors({ ...errors, rating: e.target.value === '' || e.target.value > 5 });
+            setErrors({
+              ...errors,
+              rating: e.target.value === "" || e.target.value > 5,
+            });
           }}
           error={errors.rating}
-          helperText={errors.rating ? "Rating is required and should not exceed 5" : ""}
+          helperText={
+            errors.rating ? "Rating is required and should not exceed 5" : ""
+          }
         />
         <TextField
           margin="dense"
@@ -162,7 +167,7 @@ const AddProductModal = ({ open, handleClose, product, productTypes }) => {
           value={warrantyYears}
           onChange={(e) => {
             setWarrantyYears(e.target.value);
-            setErrors({ ...errors, warrantyYears: e.target.value === '' });
+            setErrors({ ...errors, warrantyYears: e.target.value === "" });
           }}
           error={errors.warrantyYears}
           helperText={errors.warrantyYears ? "Warranty years is required" : ""}
