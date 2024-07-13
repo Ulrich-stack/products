@@ -1,0 +1,25 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Node modules
+node_modules/
+backend/node_modules/
+backend/node_modules/.env
+
+frontend/node_modules/
+
+# Build files
+build/
+dist/
+
+# Dependency directories
+jspm_packages/
+
+# Environment variables
+.env
+
+# IDE specific files
+.vscode/
+.idea/
