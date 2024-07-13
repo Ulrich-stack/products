@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Container, Typography, Button } from '@mui/material';
+import { Container, Typography, Button, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
@@ -9,23 +9,44 @@ const Home = () => {
 
   return (
     <Container>
-      <Typography variant="h4" component="h1" gutterBottom>
-        Home
-      </Typography>
-      {user ? (
-        <Button variant="contained" color="primary" onClick={() => navigate('/products')}>
-          Go to Products
-        </Button>
-      ) : (
-        <div>
-          <Button variant="contained" color="primary" onClick={() => navigate('/login')}>
-            Login
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        minHeight="100vh"
+      >
+        <Typography variant="h4" component="h1" gutterBottom fontWeight={'bold'}>
+          Home
+        </Typography>
+        {user ? (
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => navigate('/products')}
+            sx={{ mt: 2 }}
+          >
+            Go to Products
           </Button>
-          <Button variant="contained" color="secondary" onClick={() => navigate('/register')}>
-            Register
-          </Button>
-        </div>
-      )}
+        ) : (
+          <Box display="flex" gap={2} mt={2}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate('/login')}
+            >
+              Login
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={() => navigate('/register')}
+            >
+              Register
+            </Button>
+          </Box>
+        )}
+      </Box>
     </Container>
   );
 };

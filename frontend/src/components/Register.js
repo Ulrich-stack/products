@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../features/authSlice';
-import { TextField, Button, Snackbar, Alert } from '@mui/material';
+import { TextField, Button, Snackbar, Alert, Container, Typography, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
@@ -23,34 +23,54 @@ const Register = () => {
   }, [token, navigate]);
 
   return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <TextField
-          label="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          fullWidth
-          margin="normal"
-        />
-        <TextField
-          label="Password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          fullWidth
-          margin="normal"
-        />
-        <Button type="submit" variant="contained" color="primary" disabled={loading}>
-          {loading ? 'Registering...' : 'Register'}
-        </Button>
-      </form>
-      {error && (
-        <Snackbar open={true} autoHideDuration={6000}>
-          <Alert severity="error">{error}</Alert>
-        </Snackbar>
-      )}
-    </div>
+    <Container maxWidth="xs">
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        alignItems="center"
+        minHeight="100vh"
+      >
+        <Typography variant="h4" component="h1" gutterBottom fontWeight={'bold'}>
+          Register
+        </Typography>
+        <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+          <TextField
+            label="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            fullWidth
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            label="Password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            fullWidth
+            margin="normal"
+            variant="outlined"
+          />
+          <Box mt={2} width="100%">
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+              disabled={loading}
+            >
+              {loading ? 'Registering...' : 'Register'}
+            </Button>
+          </Box>
+        </form>
+        {error && (
+          <Snackbar open={true} autoHideDuration={6000}>
+            <Alert severity="error">{error}</Alert>
+          </Snackbar>
+        )}
+      </Box>
+    </Container>
   );
 };
 
