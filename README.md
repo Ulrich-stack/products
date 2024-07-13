@@ -41,9 +41,9 @@ cd test-products
 
    ```plaintext
    PORT=5000
-   MONGODB_URI=mongodb://localhost:27017
-   DB_NAME=productsDB
-   JWT_SECRET=2GwiBYuByM9f6i7kfU6aRGgNrnz7GAUe
+   MONGODB_URI=VOTRE_URI
+   DB_NAME=VOTRE_BD
+   JWT_SECRET=VOTRE_TOKEN
    ```
 
 4. Démarrez le serveur backend :
