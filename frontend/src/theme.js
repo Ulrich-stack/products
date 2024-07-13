@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   typography: {
-    fontSize: '1rem',
+    fontSize: '0.2rem',
   },
 });
 
