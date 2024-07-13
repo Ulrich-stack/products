@@ -1,46 +1,86 @@
-# Getting Started with Create React App and Redux
+Voici le fichier `README.md` mis à jour selon vos spécifications :
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+```markdown
+# Test Products Project
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Ce projet est une application web de gestion de produits, comprenant un backend en Node.js/Express connecté à une base de données MongoDB, et un frontend en React. L'application permet de consulter, ajouter, modifier et supprimer des produits.
 
-### `npm start`
+## Prérequis
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Assurez-vous d'avoir les logiciels suivants installés sur votre machine :
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+- [MongoDB](https://www.mongodb.com/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+Clonez ce dépôt sur votre machine locale :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone https://github.com/votre-utilisateur/test-products.git
+cd test-products
+```
 
-### `npm run build`
+### Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Naviguez dans le répertoire `backend` :
+   
+   ```bash
+   cd backend
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Installez les dépendances :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+3. Créez un fichier `.env` à la racine du répertoire `backend` avec le contenu suivant :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```plaintext
+   PORT=5000
+   MONGODB_URI=mongodb://localhost:27017
+   DB_NAME=productsDB
+   JWT_SECRET=2GwiBYuByM9f6i7kfU6aRGgNrnz7GAUe
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Démarrez le serveur backend :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Frontend
 
-## Learn More
+1. Naviguez dans le répertoire `frontend` :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   cd ../frontend
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Installez les dépendances :
+
+   ```bash
+   npm install
+   ```
+
+3. Démarrez l'application frontend :
+
+   ```bash
+   npm start
+   ```
+
+## Utilisation
+
+Une fois que le backend et le frontend sont en cours d'exécution, ouvrez votre navigateur et allez à l'adresse suivante :
+
+```
+http://localhost:3000
+```
+
+Vous pourrez alors consulter, ajouter, modifier et supprimer des produits.
+```
+
+Ce fichier `README.md` contient les informations nécessaires pour configurer et démarrer votre projet, en excluant les sections que vous avez demandées de retirer.
